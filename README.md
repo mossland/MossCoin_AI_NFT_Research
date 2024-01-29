@@ -18,6 +18,9 @@ NFPrompt offers significant insights into AI-driven digital artwork creation and
 ### Analysis of the Duckee Project
 The Duckee project is another pioneering initiative in the realm of Generative AI and NFTs, focusing on unique approaches to digital art creation and distribution. Our analysis delves into Duckee's innovative strategies and their implications for the NFT market. Further details can be found in our [Duckee Project Analysis](Analysis_of_the_Duckee_Project.md).
 
+## Comparative Analysis of Duckee and NFPrompt Projects
+In furthering our understanding of the Generative AI and NFT space, we have conducted a detailed comparative analysis of two key projects: Duckee and NFPrompt. This analysis highlights their commonalities, differences, and individual contributions to the field, offering valuable insights for the MossCoin project. For a detailed overview, refer to our [Comparative Analysis of Duckee and NFPrompt Projects](Comparative_Analysis_of_Duckee_and_NFPrompt_Projects.md).
+
 ## Scientific Approach
 The project will leverage blockchain technology to ensure transparency and security in transactions. The use of MossCoin will introduce a unique economic layer, allowing for a decentralized and efficient market for AI prompts. The platform will employ advanced algorithms for copyright verification and prompt evaluation, ensuring the authenticity and originality of each NFT.
 
