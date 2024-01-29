@@ -9,6 +9,15 @@ Prompt engineering has emerged as a crucial element in the field of Generative A
 ## Project Overview
 The envisioned project aims to build upon the foundations laid by existing platforms, integrating the MossCoin cryptocurrency into a similar ecosystem. This platform will facilitate the creation, sharing, and monetization of AI-generated prompts, transforming them into tradeable NFTs. It will provide a robust solution for copyright tracking and a seamless user experience for both creators and collectors.
 
+## Related Research
+In the development of our MossCoin project, we have explored various innovative initiatives in the Generative AI and NFT space. This research provides valuable insights and inspirations for our platform. Below are two key analyses:
+
+### Analysis of the NFPrompt Project
+NFPrompt offers significant insights into AI-driven digital artwork creation and blockchain-based monetization strategies. Our comprehensive analysis covers the project's approach to AI prompt engineering, blockchain integration, tokenomics, and community involvement. For an in-depth understanding, refer to our [Analysis of the NFPrompt Project](Analysis_of_the_NFPrompt_Project.md).
+
+### Analysis of the Duckee Project
+The Duckee project is another pioneering initiative in the realm of Generative AI and NFTs, focusing on unique approaches to digital art creation and distribution. Our analysis delves into Duckee's innovative strategies and their implications for the NFT market. Further details can be found in our [Duckee Project Analysis](Analysis_of_the_Duckee_Project.md).
+
 ## Scientific Approach
 The project will leverage blockchain technology to ensure transparency and security in transactions. The use of MossCoin will introduce a unique economic layer, allowing for a decentralized and efficient market for AI prompts. The platform will employ advanced algorithms for copyright verification and prompt evaluation, ensuring the authenticity and originality of each NFT.
 
