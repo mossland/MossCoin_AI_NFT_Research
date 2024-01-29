@@ -25,3 +25,4 @@ The integration of MossCoin in the realm of Generative AI, particularly in the d
 
 ## References
 - Duckee Project: [Duckee](https://docs.duckee.xyz/)
+- NFPrompt Project: [NFPrompt](https://nfprompt.io/)
