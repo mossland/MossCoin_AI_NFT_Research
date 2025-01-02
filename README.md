@@ -21,8 +21,20 @@ The Duckee project is another pioneering initiative in the realm of Generative A
 ## Comparative Analysis of Duckee and NFPrompt Projects
 In furthering our understanding of the Generative AI and NFT space, we have conducted a detailed comparative analysis of two key projects: Duckee and NFPrompt. This analysis highlights their commonalities, differences, and individual contributions to the field, offering valuable insights for the MossCoin project. For a detailed overview, refer to our [Comparative Analysis of Duckee and NFPrompt Projects](Comparative_Analysis_of_Duckee_and_NFPrompt_Projects.md).
 
-## Scientific Approach
-The project will leverage blockchain technology to ensure transparency and security in transactions. The use of MossCoin will introduce a unique economic layer, allowing for a decentralized and efficient market for AI prompts. The platform will employ advanced algorithms for copyright verification and prompt evaluation, ensuring the authenticity and originality of each NFT.
+### Recent References
+- **OpenAI's GPT-4 Research**: Exploring prompt optimization techniques for text-to-image models.
+- **EIP-2981 Royalty Standard**: Integrating on-chain royalty mechanisms for enhanced creator rewards.
+- **Polygon’s zkEVM Rollup**: Optimizing NFT transactions with minimal gas fees and high throughput.
+
+## Scientific and Technical Approach
+The platform employs a **modular architecture** with the following core components:
+- **Smart Contracts**: Built on the **ERC-721** standard, with support for EIP-2981 royalty enforcement.
+- **Decentralized Storage**: Integration with **IPFS** and **Filecoin** for scalable and immutable prompt storage.
+- **Marketplace Module**: A dynamic interface supporting auctions, direct sales, and bundled prompt transactions.
+- **Layer 2 Scaling**: Deploying on **Polygon** or similar Layer 2 solutions for cost-effective operations.
+- **Interoperability Protocols**: Ensuring compatibility with major NFT marketplaces like OpenSea and Rarible.
+
+Additionally, the platform incorporates **on-chain verification** mechanisms for ownership and **off-chain services** for advanced analytics, bridging the gap between decentralization and user convenience.
 
 ## Project Progress
 
@@ -52,3 +64,5 @@ The integration of MossCoin in the realm of Generative AI, particularly in the d
 ## References
 - Duckee Project: [Duckee](https://docs.duckee.xyz/)
 - NFPrompt Project: [NFPrompt](https://nfprompt.io/)
+- EIP-2981 Royalty Standard: [EIP-2981](https://eips.ethereum.org/EIPS/eip-2981)
+- Polygon zkEVM Rollup: [Polygon zkEVM](https://polygon.technology/solutions/polygon-zkevm)
