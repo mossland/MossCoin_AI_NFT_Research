@@ -174,7 +174,157 @@ Below is an expanded conceptual diagram illustrating the core components and how
 
 ---
 
+
 ## 8. Development Plan
+### 8.2.1 ERC-721 NFT Contract with Royalty Implementation
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/interfaces/IERC2981.sol";
+
+contract PromptNFT is ERC721URIStorage, Ownable, IERC2981 {
+    uint256 public tokenCounter;
+    mapping(uint256 => address) private _creators;
+    mapping(uint256 => uint256) private _royalties;
+
+    constructor() ERC721("PromptNFT", "PRMPT") {
+        tokenCounter = 0;
+    }
+
+    function mintPrompt(string memory tokenURI, uint256 royaltyPercentage) public {
+        require(royaltyPercentage <= 10000, "Royalty exceeds max percentage (100%)");
+        uint256 tokenId = tokenCounter;
+        _mint(msg.sender, tokenId);
+        _setTokenURI(tokenId, tokenURI);
+        _creators[tokenId] = msg.sender;
+        _royalties[tokenId] = royaltyPercentage;
+        tokenCounter++;
+    }
+
+    function royaltyInfo(uint256 tokenId, uint256 salePrice) 
+        external 
+        view 
+        override 
+        returns (address receiver, uint256 royaltyAmount) 
+    {
+        require(_exists(tokenId), "Nonexistent token");
+        uint256 royalty = (salePrice * _royalties[tokenId]) / 10000;
+        return (_creators[tokenId], royalty);
+    }
+
+    function supportsInterface(bytes4 interfaceId) 
+        public 
+        view 
+        override(ERC721, IERC165) 
+        returns (bool) 
+    {
+        return interfaceId == type(IERC2981).interfaceId || super.supportsInterface(interfaceId);
+    }
+}
+```
+
+### 8.2.2 Backend API Example
+```
+const express = require("express");
+const { ethers } = require("ethers");
+const app = express();
+app.use(express.json());
+
+const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL);
+const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+const contractAddress = process.env.CONTRACT_ADDRESS;
+const abi = [
+  "function mintPrompt(string memory tokenURI, uint256 royaltyPercentage) public",
+];
+
+const contract = new ethers.Contract(contractAddress, abi, wallet);
+
+app.post("/mint", async (req, res) => {
+  const { tokenURI, royaltyPercentage } = req.body;
+
+  try {
+    const tx = await contract.mintPrompt(tokenURI, royaltyPercentage);
+    await tx.wait();
+    res.status(200).json({ success: true, transactionHash: tx.hash });
+  } catch (error) {
+    res.status(400).json({ success: false, error: error.message });
+  }
+});
+
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+});
+```
+
+### 8.2.3 IPFS Integration
+```
+const axios = require("axios");
+const FormData = require("form-data");
+const fs = require("fs");
+
+async function uploadToIPFS(filePath) {
+  const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
+  const formData = new FormData();
+  formData.append("file", fs.createReadStream(filePath));
+
+  const res = await axios.post(url, formData, {
+    headers: {
+      "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
+      pinata_api_key: process.env.PINATA_API_KEY,
+      pinata_secret_api_key: process.env.PINATA_SECRET_API_KEY,
+    },
+  });
+
+  return res.data.IpfsHash;
+}
+
+(async () => {
+  const hash = await uploadToIPFS("path/to/your/prompt.txt");
+  console.log(`Uploaded to IPFS: ${hash}`);
+})();
+```
+
+### 8.3 Advanced Features for Scalability
+#### Layer 2 Deployment Script with Hardhat
+```
+module.exports = async ({ deployments, getNamedAccounts }) => {
+  const { deploy } = deployments;
+  const { deployer } = await getNamedAccounts();
+
+  await deploy("PromptNFT", {
+    from: deployer,
+    args: [],
+    log: true,
+  });
+
+  console.log("Contract deployed on Layer 2!");
+};
+
+module.exports.tags = ["PromptNFT"];
+```
+
+#### Wallet Integration Example (React)
+```
+import { ethers } from "ethers";
+
+async function connectWallet() {
+  if (window.ethereum) {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    await provider.send("eth_requestAccounts", []);
+    const signer = provider.getSigner();
+    console.log("Connected wallet address:", await signer.getAddress());
+  } else {
+    alert("Install Metamask!");
+  }
+}
+```
+
+---
+
+## 9. Development Plan
 
 ### 2025: System Design Phase
 
@@ -236,7 +386,7 @@ Below is an expanded conceptual diagram illustrating the core components and how
 
 ---
 
-## 9. Milestones
+## 10. Milestones
 
 | **Timeframe** | **Milestone**                                                                                           | **Key Objectives**                                                                                                                                                                                                         |
 |---------------|---------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
