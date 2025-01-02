@@ -24,6 +24,20 @@ In furthering our understanding of the Generative AI and NFT space, we have cond
 ## Scientific Approach
 The project will leverage blockchain technology to ensure transparency and security in transactions. The use of MossCoin will introduce a unique economic layer, allowing for a decentralized and efficient market for AI prompts. The platform will employ advanced algorithms for copyright verification and prompt evaluation, ensuring the authenticity and originality of each NFT.
 
+## Project Progress
+
+### Addition of Tokenizing AI Prompts as NFTs
+We have introduced a new file, [TOKENIZING_AI_PROMPTS_NFTS.md](TOKENIZING_AI_PROMPTS_NFTS.md), which outlines our initiative to tokenize AI-generated prompts as NFTs. This document provides a comprehensive overview of the project's objectives, challenges, technical architecture, and development plan. The inclusion of this file marks a significant step forward in expanding the MossCoin platform's capabilities, bridging the gap between prompt engineering and blockchain technology.
+
+Key highlights of the new file include:
+- **Problem Definition**: Addressing the lack of recognition and monetization opportunities for AI prompt creators.
+- **Necessity**: Establishing formal ownership, fostering innovation, and building trust through transparency.
+- **Main Features**: Introducing prompt NFT minting, marketplace integration, royalty mechanisms, and role-based access control.
+- **Development Plan**: A structured roadmap leading to the launch of the platform in 2026, including MVP deployment and marketplace integration.
+- **Challenges and Solutions**: Tackling scalability, interoperability, and IP concerns.
+
+For a detailed breakdown of the project, refer to [TOKENIZING_AI_PROMPTS_NFTS.md](TOKENIZING_AI_PROMPTS_NFTS.md).
+
 ## Future Directions
 Moving forward, the project aims to:
 - Develop an intuitive and user-friendly interface for prompt creation and trading.
